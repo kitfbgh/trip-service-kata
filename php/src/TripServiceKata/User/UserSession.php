@@ -11,10 +11,7 @@ class UserSession
      */
     private static $userSession;
 
-    /**
-     * @return UserSession
-     */
-    public static function getInstance()
+    public static function getInstance(): UserSession
     {
         if (null === static::$userSession) {
             static::$userSession = new UserSession();
@@ -23,6 +20,9 @@ class UserSession
         return static::$userSession;
     }
 
+    /**
+     * @throws DependentClassCalledDuringUnitTestException
+     */
     public function isUserLoggedIn(User $user)
     {
         throw new DependentClassCalledDuringUnitTestException(
@@ -30,6 +30,9 @@ class UserSession
         );
     }
 
+    /**
+     * @throws DependentClassCalledDuringUnitTestException
+     */
     public function getLoggedUser()
     {
         throw new DependentClassCalledDuringUnitTestException(

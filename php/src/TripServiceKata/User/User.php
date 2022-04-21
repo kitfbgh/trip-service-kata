@@ -10,19 +10,19 @@ class User
     private $friends;
     private $name;
 
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
-        $this->trips = array();
-        $this->friends = array();
+        $this->trips = [];
+        $this->friends = [];
     }
 
-    public function getTrips()
+    public function getTrips(): array
     {
         return $this->trips;
     }
 
-    public function getFriends()
+    public function getFriends(): array
     {
         return $this->friends;
     }
