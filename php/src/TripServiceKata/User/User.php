@@ -17,6 +17,11 @@ class User
         $this->friends = [];
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
     public function getTrips(): array
     {
         return $this->trips;
