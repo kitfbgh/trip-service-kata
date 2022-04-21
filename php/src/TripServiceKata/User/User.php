@@ -6,23 +6,28 @@ use TripServiceKata\Trip\Trip;
 
 class User
 {
-    private $trips;
-    private $friends;
-    private $name;
+    private array $trips;
+    private array $friends;
+    private string $name;
 
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
-        $this->trips = array();
-        $this->friends = array();
+        $this->trips = [];
+        $this->friends = [];
     }
 
-    public function getTrips()
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getTrips(): array
     {
         return $this->trips;
     }
 
-    public function getFriends()
+    public function getFriends(): array
     {
         return $this->friends;
     }

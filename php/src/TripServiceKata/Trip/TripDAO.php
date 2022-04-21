@@ -7,7 +7,10 @@ use TripServiceKata\Exception\DependentClassCalledDuringUnitTestException;
 
 class TripDAO
 {
-    public static function findTripsByUser(User $user)
+    /**
+     * @throws DependentClassCalledDuringUnitTestException
+     */
+    public function findTripsByUser(User $user)
     {
         throw new DependentClassCalledDuringUnitTestException('TripDAO should not be invoked on an unit test.');
     }
