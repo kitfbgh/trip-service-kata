@@ -6,9 +6,9 @@ use TripServiceKata\Trip\Trip;
 
 class User
 {
-    private $trips;
-    private $friends;
-    private $name;
+    private array $trips;
+    private array $friends;
+    private string $name;
 
     public function __construct(string $name)
     {

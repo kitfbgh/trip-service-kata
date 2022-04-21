@@ -9,11 +9,14 @@ use TripServiceKata\Exception\UserNotLoggedInException;
 class TripService
 {
     private UserSession $userSession;
+    private TripDAO $tripDAO;
 
     public function __construct(
-        UserSession $userSession
+        UserSession $userSession,
+        TripDAO $tripDAO
     ) {
         $this->userSession = $userSession;
+        $this->tripDAO = $tripDAO;
     }
 
     /**
@@ -32,7 +35,7 @@ class TripService
                 }
             }
             if ($isFriend) {
-                $tripList = TripDAO::findTripsByUser($user);
+                $tripList = $this->tripDAO->findTripsByUser($user);
             }
             return $tripList;
         } else {
